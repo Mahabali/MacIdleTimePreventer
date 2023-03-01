@@ -10,7 +10,7 @@ import Cocoa
 
 class MouseClicker {
     var timer: Timer?
-    let idleThreshold: TimeInterval = 1 // 1 minute
+    let idleThreshold: TimeInterval = 60 // 1 minute
     let clickInterval: TimeInterval = 300 // 5 minutes
     
     func start() {
@@ -28,7 +28,7 @@ class MouseClicker {
                 self.timer?.invalidate()
                 self.timer = Timer.scheduledTimer(withTimeInterval: self.clickInterval, repeats: true) { _ in
                     self.start()
-                    print("clicking now");
+                    //print("clicking now");
                 }
                 self.timer?.fire()
             }
